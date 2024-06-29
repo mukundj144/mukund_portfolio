@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukund's Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #333;
+        }
+        .navbar .dropdown-menu {
+            background-color: #333; /* Same as navbar background */
+            color: white;
+        }
+        
+        .navbar .dropdown-item {
+            color: white !important;
+        }
+        
+        .navbar .dropdown-item:hover {
+            background-color: #f39c12;
+            color: black !important;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f39c12 !important;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        
+        .lead{
+            font-weight: 400;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            animation: fadeIn 2s;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: fadeIn 2.5s;
+        }
+        .hero .btn {
+            background-color: #f39c12;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            animation: fadeIn 3s;
+        }
+        .hero .btn:hover {
+            background-color: #e67e22;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .about-me img {
+            width: 100%;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .about-me img:hover {
+            transform: scale(1.1);
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary {
+            background-color: #f39c12;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e67e22;
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        
+        .project-button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .project-button:hover {
+            background-color: #e67e22;
+        }
+        .project-button-container {
+            <!-- text-align: center; -->
+            margin-top: 20px;
+        }        
+        .project-button-container a {
+            text-decoration: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .project-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Mukund's Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="resumeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resume
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="resumeDropdown">
+                        <a class="dropdown-item" href="#resume">See Resume</a>
+                        <a class="dropdown-item" href="Mukund-Resume.docx" download>Download Resume</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+<div id="home" class="hero">
+    <div class="container">
+        <h1 class="display-4">HI! I'M MUKUND</h1>
+        <p class="lead">Passionate about exploring and interpreting data to discover meaningful insights and drive innovation.</p>
+        <a href="#about" class="btn btn-primary btn-lg">About Me</a>
+    </div>
+</div>
+
+<section id="about" class="container mt-5 about-me">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="profile2.jpg" alt="Mukund" class="img-fluid profile-3d">
+        </div>
+        <div class="col-md-6 fade-in">
+            <h2 class="section-title">About Me</h2>
+            <p>Hello! I'm Mukund, a passionate data scientist and machine learning enthusiast currently pursuing a B.Tech in Computer Science and Engineering at the Institute of Engineering and Technology, Udaipur. I have a strong foundation in programming and a keen interest in data science.</p>
+        </div>
+    </div>
+</section>
+
+<section id="resume" class="container mt-5">
+    <h2 class="section-title">Resume</h2>
+    <div class="row mt-4 fade-in">
+        <div class="col-md-12">
+            <h3>Internships</h3>
+            <p><strong>Data Science Intern</strong> – Encryptix (Delhi) Remote (May 2024 – June 2024)</p>
+            <ul>
+                <li>Developed fully functional prediction models</li>
+                <li>Implemented in Python using Pandas, NumPy, Seaborn</li>
+                <li>Worked on three distinct projects applying data science techniques and methodologies</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4 fade-in">
+        <div class="col-md-12">
+            <h3>Skills</h3>
+            <ul>
+                <li><strong>Data Science:</strong> Statistics, Linear Algebra, Machine Learning, Deep Learning</li>
+                <li><strong>Python Frameworks:</strong> Pandas, NumPy, TensorFlow, Keras</li>
+                <li><strong>Visualization:</strong> Matplotlib, Seaborn</li>
+                <li><strong>Technology:</strong> SQL, MS Excel, MS PowerPoint</li>
+            </ul>
+        </div>
+    </div>    
+    <div class="row fade-in">
+        <div class="col-md-6">
+            <h3>Education</h3>
+            <ul>
+                <li><strong>B.Tech - CSE</strong>, Institute of Engineering and Technology, Udaipur (2021-2025) - CGPA: 8.30/10</li>
+                <li><strong>Class XII (CBSE)</strong>, St Paul’s Sr Sec School, Udaipur (2020-2021) - 90.6%</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3>Certifications</h3>
+            <ul>
+                <li>Advanced Learning Algorithms - By Coursera (Andrew NG)</li>
+                <li>Supervised Machine Learning: Regression and Classification - By Coursera (Andrew NG)</li>
+                <li>Python for Data Science, AI & Development - By Coursera</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="container mt-5">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project1.jpg" class="card-img-top project-image" alt="Credit Card Fraud Detection">
+                <div class="card-body">
+                    <h4 class="card-title">Credit Card Fraud Detection</h4>
+                    <p class="card-text"><li>Utilized machine learning techniques to perform a comprehensive analysis of credit card data, employing a Random Forest classifier model.</li><li> Leveraged Python, Pandas, NumPy, and Matplotlib to preprocess and visualize the data, and subsequently build and evaluate the predictive model.</li></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project2.jpg" class="card-img-top project-image" alt="Data Analysis of Store">
+                <div class="card-body">
+                    <h4 class="card-title">Data Analysis of Store</h4>
+                    <p class="card-text"><li>Conducted a thorough data analysis of store information utilizing Microsoft Excel.</li><li> Implemented data cleaning, processing, and analysis procedures, including the use of pivot charts for insights.</li></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project3.jpg" class="card-img-top project-image" alt="Titanic Survivor: Machine Learning from Disaster">
+                <div class="card-body">
+                    <h4 class="card-title">Titanic Survivor: Machine Learning from Disaster</h4>
+                    <p class="card-text"><li>Conducted an in-depth analysis of Titanic passenger data using machine learning techniques, with a logistic regression model achieving a robust 78% accuracy.</li><li> Leveraged Python, Pandas, NumPy, and Matplotlib to preprocess and visualize the data, and subsequently build and evaluate the predictive model.</li></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row" id="moreProjectsContainer" style="display: none;">
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project4.jpg" class="card-img-top" alt="Project 4">
+                <div class="card-body">
+                    <h4 class="card-title">Project 4</h4>
+                    <p class="card-text">Description of Project 4.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project5.jpg" class="card-img-top" alt="Project 5">
+                <div class="card-body">
+                    <h4 class="card-title">Project 5</h4>
+                    <p class="card-text">Description of Project 5.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 fade-in">
+            <div class="card mb-4">
+                <img src="project6.jpg" class="card-img-top" alt="Project 6">
+                <div class="card-body">
+                    <h4 class="card-title">Project 6</h4>
+                    <p class="card-text">Description of Project 6.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="project-button-container">
+        <button class="btn btn-primary project-button" onclick="showMoreProjects()">More Projects</button>
+    </div>
+    <div class="project-button-container" id="showLessButton" style="display: none;">
+        <button class="btn btn-primary project-button" onclick="showLessProjects()">Show Less</button>
+    </div>
+</section>
+
+<section id="contact" class="container mt-5">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="row">
+        <div class="col-md-6 fade-in">
+            <h3>Get in Touch</h3>
+            <p>If you have any questions or would like to discuss potential opportunities, please feel free to reach out.</p>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-envelope"></i> <a href="mailto:mukundj2003@gmail.com">mukundj2003@gmail.com</a></li>
+                <li><i class="fas fa-phone"></i> +91 8764115535</li>
+            </ul>
+        </div>        
+        <div class="col-md-6 fade-in">
+            <h3>Follow Me</h3>
+            <div>
+                <a href="https://www.instagram.com/mukund144official/" class="mr-3"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/mukund-joshi-a70077225/" class="mr-3"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-4">
+    <p>&copy; 2023 Mukund's Portfolio. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function showMoreProjects() {
+        var moreProjectsContainer = document.getElementById('moreProjectsContainer');
+        var showLessButton = document.getElementById('showLessButton');
+        var moreProjectsButton = document.querySelector('.project-button');
+        
+        if (moreProjectsContainer.style.display === 'none') {
+            moreProjectsContainer.style.display = 'flex';
+            moreProjectsButton.style.display = 'none';
+            showLessButton.style.display = 'flex'; // Show the "Show Less" button
+        } else {
+            moreProjectsContainer.style.display = 'none';
+        }
+    }
+    
+    function showLessProjects() {
+        var moreProjectsContainer = document.getElementById('moreProjectsContainer');
+        var showLessButton = document.getElementById('showLessButton');
+        var moreProjectsButton = document.querySelector('.project-button');
+        
+        moreProjectsContainer.style.display = 'none';
+        showLessButton.style.display = 'none'; // Hide the "Show Less" button
+        moreProjectsButton.style.display = 'flex'; // Show the "More Projects" button again
+    }    
+</script>
+
+</body>
+</html>
